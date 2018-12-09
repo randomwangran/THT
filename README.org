@@ -1,15 +1,12 @@
 This ~LaTeX~ templete was used to write [[https://scholar.uwindsor.ca/cgi/viewcontent.cgi?article=8585&context=etd][my thesis]].
 
-It is based on early authors:
+It is based on early authors: [[http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/][Steve Gunn]] and [[http://www.sunilpatel.co.uk/thesis-template/][Sunil Patel]]
 
-#+BEGIN_QUOTE
-% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
-% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
-#+END_QUOTE
+According to the regulation of my university, I make some adjustments
+in this template. 
 
-According to the regulation of my university, I make some adjustment
-in this template.
+In my eyes, it is really simple.
 
 Hope it can help you.
 
-If you have any question, feel free to ask in the Issue.
+If you have any question, feel free to issue questions.

@@ -1,0 +1,359 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.4 (22/11/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[
+11pt, % The default document font size, options: 10pt, 11pt, 12pt
+oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+%singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
+doublespacing,
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+%headsepline, % Uncomment to get a line under the header
+%chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{palatino} % Use the Palatino font by default
+
+\usepackage[backend=bibtex,style=authoryear,maxcitenames=2,maxbibnames=99,natbib=true, isbn=false,url=false,doi=false,arxiv=false, dashed=false,firstinits=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\DeclareNameAlias{sortname}{family-given}
+\addbibresource{example.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+\usepackage{amsmath} % math equation for align
+%\usepackage{float}
+\usepackage{multirow}
+\usepackage{titlesec}
+\usepackage{xfrac} % fraction for unit
+\usepackage{siunitx}
+\usepackage{csquotes} % quote
+\usepackage{listings} % all codes
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+
+%% declaration table
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% add Table before the table number
+\usepackage{tocloft}
+\renewcommand{\cfttabpresnum}{Table }
+\setlength{\cftfignumwidth}{60pt}
+\renewcommand{\cftfigpresnum}{Figure }
+\setlength{\cfttabnumwidth}{60pt}
+\renewcommand{\cftloftitlefont}{\normalfont\Huge\bfseries}
+\DeclareCiteCommand{\citeyear}
+    {}
+    {\bibhyperref{\printdate}}
+    {\multicitedelim}
+    {}
+\DeclareCiteCommand{\citedate}
+    {}
+    {\bibhyperref{\printdate}}
+    {\multicitedelim}
+    {}
+% define matlab code style
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+  }
+% \lstset{
+%   language=bash,
+%   basicstyle=\ttfamily
+% }  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  
+%\usepackage{minted}
+% \usepackage{footnote}
+%\usepackage{tablefootnote}
+%\makesavenoteenv{tabular}
+\setcounter{secnumdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+%% reduce chapter tittle size
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper=letterpaper, % Change to letterpaper for US letter
+	inner=2.5cm, % Inner margin
+	outer=3.8cm, % Outer margin
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+\thesistitle{XX} % Your thesis title, this is used in the title
+% and abstract, print it elsewhere with \ttitle
+\supervisor{Dr. XX \textsc{XX}  \\  Dr. XX \textsc{XX}} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\examiner{} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+\degree{Master } % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+\author{First \textsc{Last}} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+\addresses{} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Civil Engineering} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+\university{\href{http://xx.xx}{University of xx}} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+\department{\href{http://www.xxx.xxx/}{Civil and Environmental Engineering}} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+\group{\href{http://www.xxx.org/}{}} % Your research group's name and URL, this is used in the title page, print it elsewhere with \groupname
+\faculty{\href{http://http://www.xx.xx/engineering/}{Faculty of Engineering}} % Your faculty's name and URL, this is used in the title page and abstract, print it elsewhere with \facname
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+}
+
+
+\begin{document}
+
+\frontmatter
+
+% the pre-content pages
+\clearscrheadfoot
+\ohead{\rightmark}
+\cfoot[\pagemark]{\pagemark}
+
+
+\pagestyle{plain}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+\begin{titlepage}
+\begin{center}
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
+
+
+\vfill
+\large {by}
+\\
+\large {\authorname}
+\vfill
+
+\large \textit{A Thesis \\
+  Submitted to the Faculty of Graduate Studies \\
+  through the Department of Civil \& Environmental Engineering \\
+  in Partial Fulfillment of the Requirements for \\
+  the Degree of Master of Applied Science \\
+  at the University of XX}
+
+\large {City, Province, Country}
+
+{\large 2018 \\}
+\large {\copyright 2018 \authorname}
+\vfill
+\end{center}
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	Commit member
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+{\huge \bfseries \ttitle\par}\vspace{0.4cm} 
+
+\vfill
+\large {by}
+\\
+\large {\authorname \\}
+%\vfill
+\large {APPROVED BY:} \\[0.2cm]
+\noindent\rule{12cm}{0.3pt} \\
+{XX \\
+  Department of Mathematics \& Statistics} \\[0.8cm]
+\noindent\rule{12cm}{0.3pt} \\
+\vspace{1em}
+{XX \\
+Department of Civil \& Environmental Engineering} \\[0.8cm]
+\noindent\rule{12cm}{0.3pt} \\
+{XX \\
+Department of Civil \& Environmental Engineering} \\[0.8cm]
+\noindent\rule{12cm}{0.3pt} \\
+{XX, Co-Advisor \\
+Department of Mechanical, Automotive \& Material Engineering }\\[0.8cm]
+{\begin{flushright}\large XXXX XX, 20XX \end{flushright}} % Date
+\vfill
+\end{center}
+\end{titlepage}
+
+
+% %----------------------------------------------------------------------------------------
+% %	DECLARATION PAGE
+% %----------------------------------------------------------------------------------------
+
+\begin{declaration}
+  \setcounter{page}{3}
+  \addchaptertocentry{\authorshipname}
+
+  I hereby declare that this thesis incorporates material that is
+  result of joint research, as follows:
+
+\end{declaration}
+
+\begin{abstract}
+  \addchaptertocentry{\abstractname}Brief introduction
+
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{acknowledgements}
+  \addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
+  Yu zhou zhong zui miao xiao de yi ge shen zheng hao yu zui da de nei
+  ge tong ming. ta men de ming zi jiao: xie xie.
+\end{acknowledgements}
+
+\clearpage
+\tableofcontents
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures % Prints the list of figures
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables % Prints the list of tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+  \textbf{CFD} & Computational Fluid Dynamics                      \\
+  \textbf{CV} & Control Volumes                                   \\
+\end{abbreviations}
+% %----------------------------------------------------------------------------------------
+% %	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+% %----------------------------------------------------------------------------------------
+% \begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
+% % The \SI{}{} command is provided by the siunitx package, see its documentation for instructions on how to use it
+% Speed of Light & $c_{0}$ & \SI{2.99792458e8}{\meter\per\second} (exact)\\
+% %Constant Name & $Symbol$ & $Constant Value$ with units\\
+% \end{constants}
+% %----------------------------------------------------------------------------------------
+% %	SYMBOLS
+% %----------------------------------------------------------------------------------------
+\begin{symbols}{ll} 
+  $ \alpha            $ & Attack Angle \\
+  $ \beta             $ & Titled Angle \\
+\end{symbols}
+% %----------------------------------------------------------------------------------------
+% %	DEDICATION
+% %----------------------------------------------------------------------------------------
+%\dedicatory{For/Dedicated to/To my\ldots} 
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+\mainmatter % Begin numeric (1,2,3...) page numbering
+\clearscrheadfoot
+\ohead{\rightmark}
+\cfoot[\pagemark]{\pagemark}
+
+\pagestyle{plain}
+
+ \include{Chapters/ChapterTemplate}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+ \renewbibmacro{in:}{}
+ \renewcommand\bibname{REFERENCES}
+
+ \renewbibmacro*{volume+number+eid}{
+  \printfield{volume}
+  \setunit*{\addnbspace}
+  \printfield{number}
+  \setunit{\addcomma\space}
+  \printfield{eid}}
+  \DeclareFieldFormat[article]{number}{\mkbibparens{#1}}
+\printbibliography[heading=bibintoc]
+
+
+\appendix
+\include{Appendices/AppendixTemplate}
+
+%----------------------------------------------------------------------------------------
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{VITA AUCTORIS}
+\thispagestyle{plain}
+{\huge{\bf{VITA AUCTORIS}}}
+\vspace{1cm}
+
+\begin{tabular}{ l l }
+  NAME: & XX \\
+  PLACE OF BIRTH: & XX \\
+  YEAR OF BIRTH: & XX \\
+  EDUCATION: & XX \\
+        & XX \\
+                  &\quad \\
+        & XX \\
+        & XX \\
+        & XX
+          
+\end{tabular}
+
+\vspace{1.5cm}
+
+\end{document}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

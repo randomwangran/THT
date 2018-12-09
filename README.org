@@ -1,4 +1,4 @@
-This ~LaTeX~ templete was used to write [[https://scholar.uwindsor.ca/cgi/viewcontent.cgi?article=8585&context=etd][my thesis]].
+This ~LaTeX~ template was used to write [[https://scholar.uwindsor.ca/cgi/viewcontent.cgi?article=8585&context=etd][my thesis]].
 
 It is based on early authors: [[http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/][Steve Gunn]] and [[http://www.sunilpatel.co.uk/thesis-template/][Sunil Patel]]
 
